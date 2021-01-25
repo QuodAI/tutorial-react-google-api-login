@@ -2,6 +2,9 @@
 
 This tutorial was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Click here to view the [Live Demo](https://compassionate-villani-96963b.netlify.app/).
+
+
 ## Available Scripts
 
 In the project directory, you can run:
