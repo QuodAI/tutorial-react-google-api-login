@@ -3,13 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import GoogleLogin from './lib/GoogleLogin';
 
 ReactDOM.render(
   <React.StrictMode>
-    <GoogleLogin>
       <App  />
-    </GoogleLogin>
   </React.StrictMode>,
   document.getElementById('root')
 );

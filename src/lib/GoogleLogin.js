@@ -1,38 +1,23 @@
-import { useEffect, useState } from 'react';
-
-const GoogleLogin = ({children}) => {
   
-  const loadScript = () => {
-    
-        //loads the Google JavaScript Library and makes
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) { return; }
-            js = d.createElement(s); 
-            js.id = id;
-            js.async = true;
-            js.defer = true;
-            js.src = "https://apis.google.com/js/platform.js";
-            js.onload = window.onGoogleLoad; 
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'google-api'));    
-        
-        
-  }
+export const loadGoogleScript = () => {
   
-  
-  useEffect(() => {
-    loadScript();
-  }, []);
-  
-  return (
-    <>
-      {children}
-    </>
-    
-  );
-  
-  
+      //loads the Google JavaScript Library and makes
+      (function () {
+          const id = 'google-js';
+          const src = 'https://apis.google.com/js/platform.js';
+          
+          //we have at least one script (React)
+          const firstJs = document.getElementsByTagName('script')[0];
+          
+          //prevent script from loading twice
+          if (document.getElementById(id)) { return; }
+          const js = document.createElement('script'); 
+          js.id = id;
+          js.src = src;
+          js.onload = window.onGoogleScriptLoad; 
+          firstJs.parentNode.insertBefore(js, firstJs);
+      }());    
+      
 }
-
-export default GoogleLogin;
+  
+  
