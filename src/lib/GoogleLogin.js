@@ -1,7 +1,7 @@
   
 export const loadGoogleScript = () => {
   
-      //loads the Google JavaScript Library and makes
+      //loads the Google JavaScript Library
       (function () {
           const id = 'google-js';
           const src = 'https://apis.google.com/js/platform.js';
